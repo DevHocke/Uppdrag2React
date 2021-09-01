@@ -7,6 +7,6 @@ export default{
     fourOFour,
     home,
     about,
-    portfolio
+    portfolio,
 
 }
