@@ -1,12 +1,14 @@
 import { useHistory } from 'react-router-dom'
 import RoutingPaths from '../../../routes/RoutingPaths'
+import { NavButton } from '../../navbutton/NavButton'
 
 export const NavigationDesktop = () => {
     const history = useHistory()
     return (
         <nav>
-            <button onClick={()=>history.push(RoutingPaths.home)}>home</button>
-            <button onClick={()=>history.push(RoutingPaths.about)}>about</button>
+            <NavButton buttonText="Home" path={RoutingPaths.home}/>
+            <NavButton buttonText="About" path={RoutingPaths.about}/>
+            <NavButton buttonText="Portfolio" path={RoutingPaths.portfolio}/>
         </nav>
     )
 }

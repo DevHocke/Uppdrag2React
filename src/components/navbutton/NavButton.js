@@ -1,11 +1,12 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import RoutingPaths from '../../routes/RoutingPaths'
+import './NavButton.css'
 
 
-export const NavButton = ({buttonText}) => {
+export const NavButton = (props) => {
     const history = useHistory()
+    
     return (
-        <button onClick={()=>history.pushState(RoutingPaths.home)}>{buttonText}</button>
+        <button className="nav-btn" onClick={()=>history.push(props.path)}>{props.buttonText}</button>
     )
 }
