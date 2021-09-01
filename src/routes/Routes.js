@@ -10,7 +10,7 @@ export const Routes = ({children}) => {
         {children}
         <Switch>
             <Route exact path={RoutingPaths.home} component={HomeView} />
-            <Route exact path={RoutingPaths.about} component={AboutView}/>
+            <Route exact path={RoutingPaths.about} component={AboutView} />
             <Route component={FourOFourView} />
         </Switch>
         </BrowserRouter>
