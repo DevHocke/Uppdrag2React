@@ -8,8 +8,8 @@ export const NavigationDesktop = () => {
     return (
         <nav className="nav-start">
             <NavButton buttonText="Home" path={RoutingPaths.home}/>
-            <NavButton buttonText="About" path={RoutingPaths.about}/>
-            <NavButton buttonText="Portfolio" path={RoutingPaths.portfolio}/>
+            <NavButton buttonText="Sign in" path={RoutingPaths.signin}/>
+            <NavButton buttonText="Store" path={RoutingPaths.store}/>
         </nav>
     )
 }

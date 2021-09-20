@@ -1,12 +1,11 @@
 const fourOFour =""
 const home ="/"
-const about ="/about"
-const portfolio ="/portfolio"
+const store ="/store"
+const signin ="/signin"
 
 export default{
     fourOFour,
     home,
-    about,
-    portfolio,
-
+    store,
+    signin
 }

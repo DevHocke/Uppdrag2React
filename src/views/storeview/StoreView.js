@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import { useLocation } from 'react-router'
 
-export const FourOFourView = () => {
+export const StoreView = () => {
     const location = useLocation()
     const [lastpage] = useState(location.state == "/" ? "/home" : location.state)
     return (
         <div>
             { lastpage }
-           <h1>404 Sidan kan ej visas.</h1>
+            <h1> This is the store view.</h1>
         </div>
     )
 }
+
+
