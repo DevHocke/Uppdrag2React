@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { useLocation } from 'react-router'
 
 export const AccessoriesView = () => {
     const [ServerResponse, setServerResponse] = useState();
