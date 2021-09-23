@@ -5,6 +5,7 @@ import { HomeView } from '../views/homeview/HomeView'
 import { StoreView} from '../views/storeview/StoreView'
 import { SignInView } from '../views/signinview/SignInView'
 import { AccessoriesView } from '../views/accessoriesview/AccessoriesView'
+// import LocalStorage from '../shared/storage/LocalStorage'
 
 export const Routes = ({children}) => {
     return (
