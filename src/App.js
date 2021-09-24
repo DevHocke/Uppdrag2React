@@ -4,11 +4,11 @@ import {UserProvider} from './shared/global/provider/UserProvider'
 
 function App() {
   return (
-    
+    <UserProvider>
     <Routes>
       <Navigation />
     </Routes>
-    
+    </UserProvider>
   );
 }
 
