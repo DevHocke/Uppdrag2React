@@ -9,12 +9,21 @@ export const AccessoriesView = () => {
     const [pokemonDetails, setpokemonDetails] = useState([])
 
     useEffect(() => {
+        if (ServerResponse == null){
+            fetchData()
+        }
+    }, [])
+
+    // If ServerResponse has 50 pokemons itterate through the array. 
+    // For every hockemon in the array the function fetchDetails is called and the data is stored 
+    // in pokemonDetails.
+    useEffect(() => {
         if (ServerResponse?.length == limitPokemons){
             ServerResponse.map((hockemon) => {fetchDetails(hockemon.url)})
-            
         }
     }, [ServerResponse])
     
+
     useEffect(() => {
         if (pokemonDetails?.length == limitPokemons){
             setisDone(true)
@@ -46,8 +55,8 @@ export const AccessoriesView = () => {
                     <h1>This is the Accessories view.</h1>
                      { isDone ? pokemonDetails.map((pokemon, i) => 
                      {  return <div key={i}><h2>{pokemon.species.name}</h2><img className="hockemons"src={pokemon.sprites.other['official-artwork'].front_default}></img>
-                    </div>}) : null}
-                    <button onClick={() => fetchData()}>Make API call</button>
+                    </div>}) : <> <div className="loader"></div> <h1>Loading. . .</h1></>}
+                    
                 </section>
             </main>
         </div>
