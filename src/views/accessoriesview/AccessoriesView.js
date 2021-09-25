@@ -8,13 +8,15 @@ export const AccessoriesView = () => {
     const [isDone, setisDone] = useState(false);
     const [pokemonDetails, setpokemonDetails] = useState([])
 
+    // Listens to any change and if ServerResponse is null
+    // the function fetchData is called.
     useEffect(() => {
         if (ServerResponse == null){
             fetchData()
         }
     }, [])
 
-    // If ServerResponse has 50 pokemons itterate through the array. 
+    // If ServerResponse has 50 pokemons, itterate through the array. 
     // For every hockemon in the array the function fetchDetails is called and the data is stored 
     // in pokemonDetails.
     useEffect(() => {
@@ -23,13 +25,13 @@ export const AccessoriesView = () => {
         }
     }, [ServerResponse])
     
-
+    // If pokemonDetails contains 50 pokemons, set setisDone to true.
     useEffect(() => {
         if (pokemonDetails?.length == limitPokemons){
             setisDone(true)
         }
     }, [pokemonDetails])
-
+    // fetcData makes a API call and stores the data of limitPokemons (50) in response. 
     const fetchData = async () => {
         try{
             const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=" + limitPokemons)

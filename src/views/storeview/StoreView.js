@@ -9,6 +9,7 @@ export const StoreView = () => {
         <div>
             { lastpage }
             <h1> This is the store view.</h1>
+            <p>It is only here to make it easier to check the useHistory section of the assignment.</p>
         </div>
     )
 }
