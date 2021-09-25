@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router'
-import { UserContext, UserProvider } from '../../shared/global/provider/UserProvider'
 
 export const HomeView = () => {
     const location = useLocation()
@@ -10,7 +9,6 @@ export const HomeView = () => {
         <div>
             { lastpage }
            <h1>This is the home view.</h1>
-           <h2>{}</h2>
         </div>
     )
 }

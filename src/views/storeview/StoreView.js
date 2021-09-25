@@ -9,7 +9,6 @@ export const StoreView = () => {
         <div>
             { lastpage }
             <h1> This is the store view.</h1>
-            
         </div>
     )
 }
