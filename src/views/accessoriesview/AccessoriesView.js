@@ -1,12 +1,17 @@
-import { useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import './AccessoriesView.css'
+import { LoginContext } from "../../context/LoginContext";
+import { useLocation } from 'react-router'
 
 export const AccessoriesView = () => {
+    const location = useLocation()
+    const [lastpage] = useState(location.state == "/" ? "/home" : location.state)
     const limitPokemons = 50;
     const [ServerResponse, setServerResponse] = useState();
     const [isDone, setisDone] = useState(false);
     const [pokemonDetails, setpokemonDetails] = useState([])
+    const {loggedIn} = useContext(LoginContext)
 
     // Listens to any change and if ServerResponse is null
     // the function fetchData is called.
@@ -54,6 +59,8 @@ export const AccessoriesView = () => {
         <div>
             <main>
                 <section>
+                    { loggedIn }<br />
+                    <p>You last visited the { lastpage } view.</p><br />
                     <h1>This is the Accessories view.</h1>
                      { isDone ? pokemonDetails.map((pokemon, i) => 
                      {  return <div key={i}><h2>{pokemon.species.name}</h2><img className="hockemons"src={pokemon.sprites.other['official-artwork'].front_default}></img>
