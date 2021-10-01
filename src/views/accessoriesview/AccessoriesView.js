@@ -6,7 +6,7 @@ import { useLocation } from 'react-router'
 
 export const AccessoriesView = () => {
     const location = useLocation()
-    const [lastpage] = useState(location.state == "/" ? "/home" : location.state)
+    const [lastpage] = useState(location.state == "/" ? "/accessories" : location.state)
     const limitPokemons = 50;
     const [ServerResponse, setServerResponse] = useState();
     const [isDone, setisDone] = useState(false);
